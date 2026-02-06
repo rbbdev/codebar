@@ -29,6 +29,9 @@
             "11010010000", "11010011100", "1100011101011"
         ];
         
+
+
+
         // DOM elements
         const barcodeInput = document.getElementById('barcodeInput');
         const generateBtn = document.getElementById('generateBtn');
@@ -148,6 +151,22 @@
             barcodeText.textContent = text;
         }
         
+         // Función para limpiar el formulario
+        function clearForm() {
+            barcodeInput.value = '';
+            errorMessage.style.display = 'none';
+            barcodeInput.classList.remove('invalid');
+            
+            // Restablecer canvas a estado inicial
+            barcodeCanvas.width = 800;
+            barcodeCanvas.height = 150;
+            barcodeText.textContent = 'Tu código de barras aparecerá aquí';
+            
+            // Mantener el contenedor visible pero con texto predeterminado
+            barcodeContainer.classList.add('visible');
+        }
+        
+
         // Show error message
         function showError(message) {
             errorMessage.textContent = message;
@@ -157,6 +176,9 @@
         // Event listeners
         generateBtn.addEventListener('click', generateBarcode);
         
+        clearBtn.addEventListener('click', clearForm);
+
+
         barcodeInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 generateBarcode();

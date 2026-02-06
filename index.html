@@ -5,33 +5,39 @@
     <title>Code 128 Barcode Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="clearForm()">
 
- <div class="container">
-        <h1>Code 128 Barcode Generator</h1>
-         
+  <div class="container">
+        <!-- <h1>Generador de Código de Barras Code 128</h1>
+        <p class="subtitle">Crea códigos de barras Code 128 de alta calidad y compatibles con los estándares. Simplemente ingresa tu texto y haz clic en generar.</p> -->
+        
         <div class="input-group">
-            <label for="barcodeInput">Enter Text to Encode:</label>
+            <!-- <label for="barcodeInput">Ingresa el texto a codificar:</label> -->
             <div class="input-container">
-                <input type="text" id="barcodeInput" placeholder="Type your text here (letters, numbers, symbols)" maxlength="60">
-                <button id="generateBtn">
-                    <span>Generate Barcode</span>
-                </button>
+                <!-- <input type="text" id="barcodeInput" placeholder="Escribe tu texto aquí (letras, números, símbolos)" maxlength="60"> -->
+                 <input type="text" id="barcodeInput" placeholder="Escriba el No. de Lote" maxlength="60">
+                <div class="button-group">
+                    <button id="generateBtn" class="btn">
+                        <span>Generar Código</span>
+                    </button>
+                    <button id="clearBtn" class="btn">
+                        <span>Limpiar</span>
+                    </button>
+                </div>
             </div>
-            <div class="error-message" id="errorMessage"></div>
-            
+            <div class="error-message" id="errorMessage"></div>           
         </div>
         
         <div class="barcode-container" id="barcodeContainer">
             <canvas id="barcodeCanvas" width="800" height="150"></canvas>
-            <div class="barcode-text" id="barcodeText">Your barcode will appear here</div>
+            <div class="barcode-text" id="barcodeText">Tu código de barras aparecerá aquí</div>
         </div>
         
-       
         
-        <div class="footer">
-            <p>Code 128 Barcode Generator &copy; 2026 | Standards compliant implementation</p>
-        </div>
+        
+        <!-- <div class="footer">
+            <p>Generador de Código de Barras Code 128 &copy; 2026 | Implementación compatible con estándares</p>
+        </div> -->
     </div>
 
     <!-- JsBarcode CDN -->
