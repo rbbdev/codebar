@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code 128 Barcode Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <div class="container">
+        <h1>Code 128 Barcode Generator</h1>
+         
+        <div class="input-group">
+            <label for="barcodeInput">Enter Text to Encode:</label>
+            <div class="input-container">
+                <input type="text" id="barcodeInput" placeholder="Type your text here (letters, numbers, symbols)" maxlength="60">
+                <button id="generateBtn">
+                    <span>Generate Barcode</span>
+                </button>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+            
+        </div>
+        
+        <div class="barcode-container" id="barcodeContainer">
+            <canvas id="barcodeCanvas" width="800" height="150"></canvas>
+            <div class="barcode-text" id="barcodeText">Your barcode will appear here</div>
+        </div>
+        
+       
+        
+        <div class="footer">
+            <p>Code 128 Barcode Generator &copy; 2026 | Standards compliant implementation</p>
+        </div>
+    </div>
+
+    <!-- JsBarcode CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
