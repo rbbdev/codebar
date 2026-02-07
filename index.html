@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Code 128 Barcode Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Código de Barras</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="clearForm()">
-
-  <div class="container">
-        <!-- <h1>Generador de Código de Barras Code 128</h1>
-        <p class="subtitle">Crea códigos de barras Code 128 de alta calidad y compatibles con los estándares. Simplemente ingresa tu texto y haz clic en generar.</p> -->
+<body>
+    <div class="container">
+        <h1>Generador de Código de Barras</h1>
+        <p class="subtitle">Formato Code 128</p>
         
-        <div class="input-group">
-            <!-- <label for="barcodeInput">Ingresa el texto a codificar:</label> -->
-            <div class="input-container">
-                <!-- <input type="text" id="barcodeInput" placeholder="Escribe tu texto aquí (letras, números, símbolos)" maxlength="60"> -->
-                 <input type="text" id="barcodeInput" placeholder="Escriba el No. de Lote" maxlength="60">
-                <div class="button-group">
-                    <button id="generateBtn" class="btn">
-                        <span>Generar Código</span>
-                    </button>
-                    <button id="clearBtn" class="btn">
-                        <span>Limpiar</span>
-                    </button>
-                </div>
-            </div>
-            <div class="error-message" id="errorMessage"></div>           
+        <div class="input-section">
+            <!-- <label for="barcodeInput">Ingrese el texto numérico:</label> -->
+            <input 
+                type="text" 
+                id="barcodeInput"   
+                placeholder="No. de Lote"              
+                autocomplete="off"
+            >
+            <!-- placeholder="Ej: 123456789" -->
         </div>
         
-        <div class="barcode-container" id="barcodeContainer">
-            <canvas id="barcodeCanvas" width="800" height="150"></canvas>
-            <div class="barcode-text" id="barcodeText">Tu código de barras aparecerá aquí</div>
+        <div class="button-section">
+            <button id="generateBtn" class="btn btn-primary">Generar</button>
+            <button id="clearBtn" class="btn btn-secondary">Limpiar</button>
         </div>
         
-        
-        
-        <!-- <div class="footer">
-            <p>Generador de Código de Barras Code 128 &copy; 2026 | Implementación compatible con estándares</p>
-        </div> -->
+        <div class="barcode-section">
+            <div id="barcodeDisplay"></div>
+        </div>
     </div>
-
-    <!-- JsBarcode CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    
+    <!-- Librería JsBarcode para generar códigos de barras -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
